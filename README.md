@@ -50,7 +50,7 @@ This image supports both `OpenSSL` and `Crypt` for password encryption.
 
 To generate a password for `OpenSSL` please use the following:
 
-    `echo -n "your_password" | openssl dgst -binary -md5 | openssl enc -base64`
+`echo -n "your_password" | openssl dgst -binary -md5 | openssl enc -base64`
 
 ## Test it
 
@@ -60,8 +60,8 @@ You can use your favourite FTP client (such as FileZilla) to connect to the serv
 
 You can view the log files of ProFTPD itself:
 
-    `tail -f /var/log/proftpd/proftpd.log`
+`tail -f /var/log/proftpd/proftpd.log`
 
 And the SQL part of ProFTPD:
 
-    `tail -f /var/log/proftpd/sql.log`
+`tail -f /var/log/proftpd/sql.log`
