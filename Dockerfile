@@ -20,6 +20,7 @@ ADD sql.conf /etc/proftpd/sql.conf
 EXPOSE 20 21
 
 ADD	entrypoint.sh /usr/local/sbin/entrypoint.sh
+RUN chmod +x /usr/local/sbin/entrypoint.sh
 ENTRYPOINT ["/usr/local/sbin/entrypoint.sh"]
 
 CMD	["proftpd", "--nodaemon"]
