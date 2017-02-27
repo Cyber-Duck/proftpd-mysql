@@ -21,12 +21,10 @@ RUN echo "LoadModule mod_sql.c" >> /etc/proftpd/modules.conf
 RUN echo "LoadModule mod_sql_mysql.c" >> /etc/proftpd/modules.conf
 
 ADD sql.conf /etc/proftpd/sql.conf
-RUN echo "\n\nSQLConnectInfo $MYSQL_DATABASE@$MYSQL_HOST $MYSQL_USER $MYSQL_PASSWORD" >> /etc/proftpd/sql.conf
 
 EXPOSE 20 21
 
 ADD	entrypoint.sh /usr/local/sbin/entrypoint.sh
-RUN chmod +x /usr/local/sbin/entrypoint.sh
 ENTRYPOINT ["/usr/local/sbin/entrypoint.sh"]
 
 CMD	["proftpd", "--nodaemon"]

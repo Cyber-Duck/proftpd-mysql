@@ -7,4 +7,8 @@ if [ -n "$FTP_USERNAME" -a -n "$FTP_PASSWORD" ]; then
 	chown -R $FTP_USERNAME:$FTP_USERNAME /home/$FTP_USERNAME
 fi
 
+if [ -n "$MYSQL_HOST" -a -n "$MYSQL_DATABASE" -a -n "$MYSQL_USER" -a -n "$MYSQL_PASSWORD" ]; then
+	echo "\n\nSQLConnectInfo $MYSQL_DATABASE@$MYSQL_HOST $MYSQL_USER $MYSQL_PASSWORD" >> /etc/proftpd/sql.conf
+fi
+
 exec "$@"
