@@ -2,10 +2,10 @@ FROM debian:jessie
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV MYSQL_HOST
-ENV MYSQL_DATABASE
-ENV MYSQL_USER
-ENV MYSQL_PASSWORD
+ENV MYSQL_HOST localhost
+ENV MYSQL_DATABASE database
+ENV MYSQL_USER user
+ENV MYSQL_PASSWORD password
 
 RUN apt-get update -qq && \
     apt-get install -y proftpd proftpd-mod-mysql && \
