@@ -11,4 +11,9 @@ if [ -n "$MYSQL_HOST" -a -n "$MYSQL_DATABASE" -a -n "$MYSQL_USER" -a -n "$MYSQL_
 	echo "\n\nSQLConnectInfo $MYSQL_DATABASE@$MYSQL_HOST $MYSQL_USER $MYSQL_PASSWORD" >> /etc/proftpd/sql.conf
 fi
 
+if [ -n "$PROFTPD_USER" -a -n "$WEB_GROUP" ]; then
+	sed -i.bak "s/^\(User\).*/User $PROFTPD_USER/" /etc/proftpd/proftpd.conf
+	sed -i.bak "s/^\(Group\).*/Group $WEB_GROUP/" /etc/proftpd/proftpd.conf
+fi
+
 exec "$@"

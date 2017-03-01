@@ -8,7 +8,7 @@ RUN apt-get update -qq && \
     apt-get autoremove --yes && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-RUN	sed -i "s/# DefaultRoot/DefaultRoot/" /etc/proftpd/proftpd.conf
+RUN	sed -i.bak "s/# DefaultRoot/DefaultRoot/" /etc/proftpd/proftpd.conf
 RUN echo "Include /etc/proftpd/sql.conf" >> /etc/proftpd/proftpd.conf
 RUN echo "RequireValidShell off" >> /etc/proftpd/proftpd.conf
 
