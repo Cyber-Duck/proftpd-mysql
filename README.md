@@ -2,6 +2,12 @@
 
 ProFTPD Base Image including MySQL database authentication support.
 
+## DockerHub
+
+This is available on [DockerHub](https://hub.docker.com/r/cyberduck/proftpd-mysql) under the `cyberduck/proftpd-mysql` image name.
+
+## Usage
+
 Example of running the image for one single standard FTP user using `docker-compose`:
 
 ```yaml
