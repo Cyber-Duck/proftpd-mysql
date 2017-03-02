@@ -12,6 +12,7 @@ if [ -n "$MYSQL_HOST" -a -n "$MYSQL_DATABASE" -a -n "$MYSQL_USER" -a -n "$MYSQL_
 fi
 
 if [ -n "$PROFTPD_USER" -a -n "$WEB_GROUP" ]; then
+	adduser $PROFTPD_USER $WEB_GROUP
 	sed -i.bak "s/^\(User\).*/User $PROFTPD_USER/" /etc/proftpd/proftpd.conf
 	sed -i.bak "s/^\(Group\).*/Group $WEB_GROUP/" /etc/proftpd/proftpd.conf
 fi
