@@ -25,6 +25,7 @@ services:
         ports:
             - "21:21"
             - "20:20"
+            - "60000-60100:60000-60100"
 ```
 
 Example of running the image for a MySQL database authentication using `docker-compose`:
@@ -39,6 +40,8 @@ services:
             MYSQL_DATABASE: mysql_database_name
             MYSQL_USER: mysql_username
             MYSQL_PASSWORD: mysql_password
+            PROFTPD_USER: proftpd
+            WEB_GROUP: www-data
         volumes:
             - /path/to/ftp/folder:/path/to/ftp/folder
         networks:
@@ -46,6 +49,7 @@ services:
         ports:
             - "21:21"
             - "20:20"
+            - "60000-60100:60000-60100"
 ```
 
 ## MySQL Tables to generate
@@ -97,6 +101,8 @@ you can use the following environment variables :
 ## Test it
 
 You can use your favourite FTP client (such as FileZilla) to connect to the server with the sample user you added before.
+
+You can also run `ftp localhost` from your macOS host machine for example.
 
 ## Troubleshooting
 
