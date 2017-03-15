@@ -2,7 +2,7 @@
 
 ProFTPD Base Image including MySQL database authentication support.
 
-## DockerHub
+## DockerHub
 
 This is available on [DockerHub](https://hub.docker.com/r/cyberduck/proftpd-mysql) under the `cyberduck/proftpd-mysql` image name.
 
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `ftp_users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 ```
 
-## Password generation
+## Password generation
 
 This image supports both `OpenSSL` and `Crypt` for password encryption.
 
@@ -98,7 +98,7 @@ you can use the following environment variables :
 * `PROFTPD_USER` (default is set to `nobody`)
 * `WEB_GROUP` (default is set to `nobody`)
 
-## Test it
+## Test it
 
 You can use your favourite FTP client (such as FileZilla) to connect to the server with the sample user you added before.
 
